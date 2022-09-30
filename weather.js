@@ -1,14 +1,15 @@
-const cityChoice = document.querySelector(".myInput");
-const btn2 = document.querySelector("button");
+//const cityChoice = document.querySelector(".myInput");
+const frm = document.getElementById("myForm");
+const sel = document.getElementById("citySelect");
 
-// cityChoice?.addEventListener("input", () => {
-//   let city = cityChoice?.value;
-//   fetcher(city);
-// });
-
-btn2?.addEventListener("click", () => {
-  const city = cityChoice?.value;
+frm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const city = sel.value;
+  console.log(typeof city, city);
   fetcher(city);
+  //setTimeout(() => {
+  //  city = "";
+  //}, "3000");
 });
 
 function fetcher(city) {
@@ -20,17 +21,14 @@ function fetcher(city) {
     })
     .then((weather) => {
       console.log(weather);
-      myP = document.querySelector(".text");
-      myP2 = document.querySelector(".meteo");
-      myP3 = document.querySelector(".c-temp");
-      myP4 = document.querySelector(".wind");
+      p1 = document.querySelector(".text");
+      p2 = document.querySelector(".meteo");
+      p3 = document.querySelector(".c-temp");
+      p4 = document.querySelector(".wind");
 
-      myP.textContent = `The weather in ${weather.location.name} is currently`;
-      myP2.textContent = `${weather.current.condition.text}`;
-      myP3.textContent = `Temp: ${weather.current.temp_c}\u00B0`;
-      myP4.textContent = `Wind: ${weather.current.gust_kph} kp\/h`;
+      p1.textContent = `The weather in ${weather.location.name} is currently`;
+      p2.textContent = `${weather.current.condition.text}`;
+      p3.textContent = `Temp: ${weather.current.temp_c}\u00B0`;
+      p4.textContent = `Wind: ${weather.current.gust_kph} kp\/h`;
     });
-  setTimeout(() => {
-    city = "";
-  }, "3000");
 }

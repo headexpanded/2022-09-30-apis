@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
 
     <link rel="stylesheet" href="./weather.css" />
     <title>Weather</title>
@@ -21,8 +25,16 @@
           <div class="intro">
             Enter a city's name to see the current weather there:
           </div>
-          <input type="text" class="myInput" />
-          <button class="weatherBtn">Click Me</button>
+          <form action="" class="myForm" id="myForm">
+            <select name="cities" id="citySelect">
+              <option value="">--Please choose a city--</option>
+              <option value="Rome">Rome</option>
+              <option value="Madrid">Madrid</option>
+              <option value="Paris">Paris</option>
+              <option value="Berlin">Berlin</option>
+              <input class="weatherBtn" type="submit" />
+            </select>
+          </form>
           <div class="result">
             <p class="text"></p>
             <h3 class="meteo"></h3>
