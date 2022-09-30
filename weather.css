@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  font-family: "Inter Tight", sans-serif;
 }
 
 .main {
@@ -27,6 +28,13 @@ body {
   padding: 8px 16px 4px 16px;
 }
 
+.temp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
 .myInput {
   margin: 16px 0px;
   text-align: center;
@@ -34,7 +42,7 @@ body {
 }
 
 .weatherBtn {
-  background-color: yellow;
+  background-color: rgb(143, 226, 243);
   border: 1px black solid;
   padding: 8px 36px;
   max-width: 320px;
